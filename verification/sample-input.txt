@@ -1,0 +1,6 @@
+/help
+/upper internship
+hello
+/stats
+/reverse abc
+/quit

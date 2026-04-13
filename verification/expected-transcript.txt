@@ -1,0 +1,9 @@
+Kotlin/Wasm WASI echo console
+Type text to echo it back, or use /help for commands.
+wasm> Commands: /help, /stats, /upper <text>, /lower <text>, /reverse <text>, /quit
+wasm> upper: INTERNSHIP
+wasm> Wasm received: hello
+wasm> Stats: total=4, plain=1, commands=3
+wasm> reverse: cba
+wasm> Stopping on user request.
+Wasm session closed.

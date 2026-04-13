@@ -19,6 +19,20 @@ On Windows:
 .\gradlew.bat runWasm
 ```
 
+## Verify the submission
+
+```bash
+./gradlew verifySubmission
+```
+
+On Windows:
+
+```powershell
+.\gradlew.bat verifySubmission
+```
+
+This task builds the project, runs the tests, checks a fixed end-to-end transcript against the generated WASI binary, and confirms the expected `.wasm` artifact exists.
+
 ## What it does
 
 - Reads lines from `stdin`
@@ -45,3 +59,7 @@ Wasm session closed.
 
 - The Gradle build uses the official `wasmWasi { nodejs(); binaries.executable() }` target shape.
 - `runWasm` compiles the optimized executable and runs the generated Kotlin `.mjs` launcher under Node.js.
+
+## Why direct WASI I/O?
+
+The project reads and writes through direct WASI imports (`fd_read` and `fd_write`) instead of `readln()` and `println()` for the input loop. That choice is deliberate: Kotlin/Wasm supports the WASI target and Node.js runtime, but the standard Kotlin line-reading API is not reliably available for this environment. Using WASI syscalls keeps the interactive loop inside the Wasm binary itself, which is closer to the internship objective and makes the stdin/stdout behavior explicit.

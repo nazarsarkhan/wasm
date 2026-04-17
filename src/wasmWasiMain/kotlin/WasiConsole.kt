@@ -63,6 +63,7 @@ private fun ByteArray.copyToMemory(ptr: Pointer) {
  * Reads a WASI u64 (nanoseconds) as two i32 loads and converts to milliseconds.
  * Avoids relying on Pointer.loadLong() which may not be stable across Kotlin/Wasm versions.
  */
+@OptIn(UnsafeWasmMemoryApi::class)
 private fun Pointer.loadNanosToMs(): Long {
     val lo = this.loadInt().toLong() and 0xFFFFFFFFL
     val hi = (this + 4).loadInt().toLong() and 0xFFFFFFFFL

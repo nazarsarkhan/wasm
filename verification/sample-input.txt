@@ -1,6 +1,6 @@
 /help
 /upper internship
 hello
-/stats
+/history
 /reverse abc
 /quit

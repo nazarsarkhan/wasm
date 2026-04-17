@@ -1,9 +1,12 @@
 Kotlin/Wasm WASI echo console
 Type text to echo it back, or use /help for commands.
-wasm> Commands: /help, /stats, /upper <text>, /lower <text>, /reverse <text>, /quit
+wasm> Commands: /help, /stats, /time, /history, /upper <text>, /lower <text>, /reverse <text>, /read <file>, /write <file> <content>, /quit
 wasm> upper: INTERNSHIP
 wasm> Wasm received: hello
-wasm> Stats: total=4, plain=1, commands=3
+wasm> history:
+  1: /help
+  2: /upper internship
+  3: hello
 wasm> reverse: cba
 wasm> Stopping on user request.
 Wasm session closed.

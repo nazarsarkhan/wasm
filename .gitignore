@@ -1,9 +1,25 @@
+# Build output
 .gradle/
 build/
 out/
-node_modules/
 
+# Node
+node_modules/
+npm-debug.log*
+
+# IntelliJ / IDE
 .idea/
 *.iml
+*.iws
+*.ipr
 
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config
 local.properties
+
+# Kotlin/Wasm generated launcher (rebuilt on every compile)
+**/*-wasm-wasi.mjs
+**/*-wasm-wasi.wasm
